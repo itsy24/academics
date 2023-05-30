@@ -1,5 +1,5 @@
 function buildMetadata(sample) {
-  d3.json('../data/compiled_data.json').then((data) => {
+  d3.json('data/compiled.json').then((data) => {
     //demographics box change. 
     let sample_obj = data[2].demograph[sample];
     let averageSat = data[0].academics_clean[sample];
@@ -35,7 +35,7 @@ function buildMetadata(sample) {
 function buildChart(sample) {
 
   //grab value points for graph
-  d3.json('../data/compiled_data.json').then((data) => {
+  d3.json('data/compiled.json').then((data) => {
     //data[0] = access to the academics_clean portion of the json file
     let academicValue = data[0].academics_clean[sample];
     //initialize empty list to hold x and y values
@@ -96,7 +96,7 @@ function createMarkers(sample) {
   parentElement.appendChild(newMapContainer);
 
 
-  d3.json('../data/compiled_data.json').then((data) => {
+  d3.json('data/compiled.json').then((data) => {
     let coordinValue = data[0].academics_clean[sample];
   //initialize empty list to hold lat/lon coordinates
     objkeys = Object.keys(coordinValue);
@@ -161,7 +161,7 @@ function init() {
   // Grab a reference to the dropdown select element
   let dropdown = d3.select('#selDataset');
   // Use the list of sample names to populate the select options
-  d3.json('../data/compiled_data.json').then((data) => {
+  d3.json('data/compiled.json').then((data) => {
     let sampleNames = data[7].schools;
     
     for (let i = 0; i < sampleNames.length; i++) {
