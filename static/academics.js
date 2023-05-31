@@ -185,9 +185,7 @@ function optionChanged(newSample) {
 };
 
 // Initialize the dashboard
-
 init();
-
 
 
 
